@@ -5,7 +5,7 @@ We begin with a $n\times n$ board, the grid cells, from here on out referred to 
 
 Unsatisfied nodes move to empty cells(*). This continues until we either hit an iterations limit, or there are no more unsatisfied nodes. (**)
 
-![](https://github.com/lutscha/ShellingSegregationModel/assets/example_assignment.gif)
+![](https://github.com/lutscha/ShellingSegregationModel/tree/main/assets/example_assignment.gif)
 
 (*) This is ambiguous, in what way are they moved? One assumption would be to move it to a random node. Another would be to move it to the closest satisfying node. One may move all unsatisfied nodes in bulk, only afterwards scanning for new unsatisfied nodes. Additionally, what if we move nodes only to satisfied squares, then (**) might be a problem as well, since we might not have any available satisfying empty squares. Imagine a high value of $pbound$, fore example $pbound=1$, then as long as the empty cell has two different colored neighbors, nobody will move there. This brings us to our next section.
 ## The assignment algorithms
@@ -26,7 +26,7 @@ new_simulation.run(100, "batchRandom")
 new_simulation.animate()
 ```
 
-![](https://github.com/lutscha/ShellingSegregationModel/assets/batchRandom_example.gif)
+![](https://github.com/lutscha/ShellingSegregationModel/tree/main/assets/batchRandom_example.gif)
 
 The `size` parameter defines the length of an edge of the square, `whiteP` defines the percentage of empty nodes, `redP` determines what percentage of the ***remaining*** $(1-whiteP)$ nodes are red, the remainder being blue. The segregation parameter is `pbound`, and in some simulations running the `closest` selection, the algorithm gets stuck in a cycle. Therefore we implement the `stopping` parameter, if the number of unsatisfied nodes goes below the `stopping` parameter, the simulation stops. It is an optional argument with a default value of $1$.
 
