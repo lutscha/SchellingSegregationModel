@@ -1,4 +1,4 @@
-# ShellingSegregationModel
+# SchellingSegregationModel
 Evolving out of a single problem for the MIT Networks (14.15 / 6.3260) class, I created a variety of Shelling segregation model simulations. Below is a quick explanation of the model, the motivation for the different assignment algorithms, and some of the usage details.
 ## The model
 We begin with a $n\times n$ board, the grid cells, from here on out referred to as **nodes**, are color either red or blue. Some fraction of the Nodes are left empty, we will also refer to these as white nodes. The nodes keep a count of their immediate neighbors, which are defined as the 8 nodes surrounding it (this means that grids that share a single vertex are still neighbors). They look at what fraction of their neighbors are of the same color as they are, this is defined as the node's $pval$. We have some value, $pbound\in[0,1]$, and if a node's $pval < pbound$, then it is *unsatisfied*.
